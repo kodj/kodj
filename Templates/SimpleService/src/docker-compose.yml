@@ -1,0 +1,13 @@
+web:
+    build: .
+    ports:
+     - "5000:5000"
+    links:
+     - consul
+consul:
+    image: progrium/consul
+    ports:
+    - "8400:8400"
+    - "8500:8500"
+    - "8600:53/udp"
+    command: -server -bootstrap -ui-dir /ui
