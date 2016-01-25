@@ -1,0 +1,29 @@
+{
+    "version": "1.0.0-*",
+    "description": "Library to work with Consul, will be used by Kodj microservices",
+    "authors": [
+        "Phi Huynh"
+    ],
+    "tags": [
+        "Kodj",
+        "Consul"
+    ],
+    "projectUrl": "",
+    "licenseUrl": "",
+    "tooling": {
+        "defaultNamespace": "Kodj.Consul"
+    },
+    "frameworks": {
+        "dnxcore50": {
+            "dependencies": {
+                "Microsoft.CSharp": "4.0.1-beta-23516",
+                "System.Collections": "4.0.11-beta-23516",
+                "System.Linq": "4.0.1-beta-23516",
+                "System.Runtime": "4.0.21-beta-23516",
+                "System.Threading": "4.0.11-beta-23516",
+                "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
+                "JetBrains.Annotations": "10.1.1-eap"
+            }
+        }
+    }
+}
