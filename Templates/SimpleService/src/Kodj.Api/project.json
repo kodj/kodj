@@ -23,7 +23,8 @@
     "System.Runtime": "4.0.21-beta-*",
     "System.Runtime.Extensions": "4.0.11-beta-*",
     "EntityFramework": "7.0.0-beta4",
-    "EntityFramework.Sqlite.Design": "7.0.0-rc1-final"
+    "EntityFramework.Sqlite.Design": "7.0.0-rc1-final",
+    "Kodj.ServiceDiscovery": "1.0.0-*"
   },
   "frameworks": {
     "dnxcore50": {}
