@@ -5,24 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Kodj.Service;
 using Kodj.Service.Entities;
+using Kodj.ServiceDiscovery;
 
 namespace Kodj.Api.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private SampleService sampleService;
+        private SampleService _sampleService;
+        private IServiceDiscovery _consul;
 
-        public ValuesController(SampleService sampleService)
+        public ValuesController(SampleService sampleService, IServiceDiscovery consul)
         {
-            this.sampleService = sampleService;
+            this._sampleService = sampleService;
+            this._consul = consul;
         }
 
         // GET: api/values
         [HttpGet]
         public IEnumerable<SampleEntity> Get()
         {
-            return sampleService.GetSomeData();
+            return _sampleService.GetSomeData();
         }
 
         // GET api/values/5

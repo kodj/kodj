@@ -24,6 +24,7 @@
     "System.Runtime.Extensions": "4.0.11-beta-*",
     "EntityFramework": "7.0.0-beta4",
     "EntityFramework.Sqlite.Design": "7.0.0-rc1-final",
+    "System.Net.Http": "4.0.1-beta-23516",
     "Kodj.ServiceDiscovery": "1.0.0-*"
   },
   "frameworks": {

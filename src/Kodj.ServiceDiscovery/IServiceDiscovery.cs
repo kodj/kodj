@@ -1,8 +1,12 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Kodj.ServiceDiscovery
 {
     public interface IServiceDiscovery
     {
-        void RegisterService(string serviceName, string endpoint, int port);
-        void RemoveService(string serviceName, string endpoint, int port);
+        Task RegisterService(string serviceName, string endpoint, int port);
+        Task RemoveService(string serviceName, string endpoint, int port);
+        Task<List<ServiceMetadata>> GetService(string serviceName);
     }
 }

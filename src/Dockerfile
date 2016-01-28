@@ -1,4 +1,4 @@
-FROM trumhemcut/aspnet-fast
+FROM aspnet-fast
 
 MAINTAINER Phi Huynh <trumhemcut@gmail.com>
 
@@ -7,6 +7,8 @@ RUN apt-get -qq update && apt-get install -qqy sqlite3 libsqlite3-dev && rm -rf 
 
 COPY . /app
 WORKDIR /app/Kodj.Service
+RUN ["dnu", "restore"]
+WORKDIR /app/Kodj.ServiceDiscovery
 RUN ["dnu", "restore"]
 WORKDIR /app/Kodj.Api
 RUN ["dnu", "restore"]

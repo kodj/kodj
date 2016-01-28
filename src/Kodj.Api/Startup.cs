@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Kodj.Service;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Sqlite;
+using Kodj.Consul.Extensions.DependencyInjection;
 
 namespace Kodj.Api
 {
@@ -37,6 +38,8 @@ namespace Kodj.Api
                     .AddSqlite()
                     .AddDbContext<SampleDbContext>(options =>
                         options.UseSqlite(Configuration["Data:DefaultConnection:ConnectionString"]));
+
+            services.AddConsul();
 
             services.AddScoped<SampleService, SampleService>();
         }

@@ -1,0 +1,39 @@
+{
+    "version": "1.0.0-*",
+    "description": "ASPNET Fast",
+    "authors": [
+        "phihuynh"
+    ],
+    "tags": [
+        "Kodj"
+    ],
+    "projectUrl": "",
+    "licenseUrl": "",
+    "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516",
+        "EntityFramework.Commands": "7.0.0-rc1-final",
+        "EntityFramework.Sqlite.Design": "7.0.0-rc1-final",
+        "EntityFramework.Sqlite": "7.0.0-rc1-final",
+        "EntityFramework": "7.0.0-beta4",
+        "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
+        "JetBrains.Annotations": "10.1.1-eap",
+        "System.Net.Http": "4.0.1-beta-23516",
+        "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
+        "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+        "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
+        "System.Runtime.Extensions": "4.0.11-beta-*"
+    },
+    "frameworks": {
+        "dnxcore50": {}
+    }
+}
