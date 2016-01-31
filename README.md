@@ -1,12 +1,12 @@
 # kodj simple service
-This is a very simple service leverage the latest .NET Core technology. It includes:
+This is a very simple service leveraging the latest .NET Core technology. It includes:
 * Kodj.Service: a very simple service
-* Kodj.API: service enpoint
+* Kodj.API: service endpoint
 
 ## Features
 * Cross-platform (MacOS, Windows, Linux, Docker, Azure, Amazon...)
 * Docker compatible
-* Be able to scale smoothly
+* Able to scale smoothly
 * Appropriate to be a microservice
 * Able to work with service discovery to discover services
 
