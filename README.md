@@ -41,11 +41,11 @@ We will see in the Kitematic, there will be 2 more instances created.
 * Go to Kodj.Api folder and run this commands to restore packages, create database and starting the web
 ```
 git clone https://github.com/kodj/kodj.git kodj
-cd kodj/src/SimpleService/src/Kodj.Service
+cd kodj/src/Kodj.Service
 dnu restore
-cd kodj/src/SimpleService/src/Kodj.ServiceDiscovery
+cd kodj/src/Kodj.ServiceDiscovery
 dnu restore
-cd kodj/Templates/SimpleService/src/Kodj.Api
+cd kodj/src/Kodj.Api
 dnu restore
 dnx ef database update
 dnx web
