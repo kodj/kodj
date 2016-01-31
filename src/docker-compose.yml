@@ -1,13 +1,22 @@
-web:
-    image: kodjservice
-    hostname: web
+web1:
+    build: .
+    hostname: web1
     ports:
-     - "5000:5000"
+     - "5000"
     links:
-     - consul1
+     - "consul1"
+     - "registrator"
+web2:
+    build: .
+    hostname: web2
+    ports:
+     - "5000"
+    links:
+     - "consul1"
+     - "registrator"
 consul1:
   image: "progrium/consul:latest"
-  hostname: "consul1"
+  hostname: "consul"
   ports:
     - "8400:8400"
     - "8500:8500"
@@ -19,5 +28,5 @@ registrator:
   volumes:
    - "/var/run/docker.sock:/tmp/docker.sock"
   links:
-    - "consul1:consul1"
-  command: "consul://consul1:8500"
+    - consul1
+  command: "-internal consul://consul1:8500"

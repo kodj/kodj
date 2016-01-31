@@ -22,10 +22,14 @@ namespace Kodj.ServiceDiscovery
         {
             using (var httpClient = new HttpClient())
             {
-                var result = await httpClient.GetStringAsync(string.Format("http://{0}:{1}/v1/catalog/service/{2}"
+                var url = string.Format("http://{0}:{1}/v1/catalog/service/{2}"
                     , Configuration["server:address"]
                     , Configuration["server:port"]
-                    , serviceName));
+                    , serviceName);
+                    
+                System.Console.WriteLine("Fetching data from: {0}", url);
+                
+                var result = await httpClient.GetStringAsync(url);
                 return JsonConvert.DeserializeObject<List<ServiceMetadata>>(result);
             }
         }

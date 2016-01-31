@@ -20,17 +20,22 @@ namespace Kodj.Api.Controllers
         [HttpGet("{servicename}")]
         public async Task<dynamic> Get(string serviceName)
         {
+            System.Console.WriteLine(string.Format("Getting information from {0}", serviceName));
             var services = await _consul.GetService(serviceName);
             var service = services?[0];
 
             using (var httpClient = new HttpClient())
             {
-                var result = await httpClient.GetStringAsync(string.Format("http://{0}:{1}/status", service.Address, service.ServicePort));
+                var url = string.Format("http://{0}:{1}/status", service.ServiceAddress, service.ServicePort);
+                
+                Console.WriteLine("Fetching data from {0}", url);
+                
+                var result = await httpClient.GetStringAsync(url);
 
                 return new
                 {
                     ServiceName = service.ServiceName,
-                    ServerName = service.Address,
+                    ServerName = service.ServiceAddress,
                     Port = service.ServicePort,
                     Status = result
                 };
