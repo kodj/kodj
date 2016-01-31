@@ -1,14 +1,14 @@
-web1:
+service1:
     build: .
-    hostname: web1
+    hostname: service1
     ports:
      - "5000"
     links:
      - "consul1"
      - "registrator"
-web2:
+service2:
     build: .
-    hostname: web2
+    hostname: service2
     ports:
      - "5000"
     links:
@@ -20,7 +20,7 @@ consul1:
   ports:
     - "8400:8400"
     - "8500:8500"
-    - "53:53"
+    - "8600:53/udp"
   command: "-server -bootstrap-expect 1 -ui-dir /ui"
 registrator:
   image: "gliderlabs/registrator"
