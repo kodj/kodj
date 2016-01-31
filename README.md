@@ -40,12 +40,14 @@ We will see in the Kitematic, there will be 2 more instances created.
 * Clone the source code to your local computer
 * Go to Kodj.Api folder and run this commands to restore packages, create database and starting the web
 ```
+mkdir ~/projects
+cd ~/projects
 git clone https://github.com/kodj/kodj.git kodj
-cd kodj/src/Kodj.Service
+cd ~/projects/kodj/src/Kodj.Service
 dnu restore
-cd kodj/src/Kodj.ServiceDiscovery
+cd ~/projects/kodj/src/Kodj.ServiceDiscovery
 dnu restore
-cd kodj/src/Kodj.Api
+cd ~/projects/kodj/src/Kodj.Api
 dnu restore
 dnx ef database update
 dnx web
