@@ -1,4 +1,4 @@
-FROM aspnet-fast
+FROM trumhemcut/aspnet-fast
 
 MAINTAINER Phi Huynh <trumhemcut@gmail.com>
 

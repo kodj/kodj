@@ -6,6 +6,9 @@ service1:
     links:
      - "consul1"
      - "registrator"
+    environment:
+     SERVICE_NAME: service1
+     SERVICE_TAGS: production
 service2:
     build: .
     hostname: service2
@@ -14,19 +17,33 @@ service2:
     links:
      - "consul1"
      - "registrator"
+    environment:
+     SERVICE_NAME: service2
+     SERVICE_TAGS: production
 consul1:
-  image: "progrium/consul:latest"
-  hostname: "consul"
-  ports:
-    - "8400:8400"
-    - "8500:8500"
-    - "8600:53/udp"
-  command: "-server -bootstrap-expect 1 -ui-dir /ui"
+    image: "progrium/consul:latest"
+    hostname: "consul"
+    ports:
+     - "8400:8400"
+     - "8500:8500"
+     - "8600:53/udp"
+    command: "-server -bootstrap-expect 1 -ui-dir /ui"
 registrator:
-  image: "gliderlabs/registrator"
-  hostname: "registrator"
-  volumes:
-   - "/var/run/docker.sock:/tmp/docker.sock"
+    image: "gliderlabs/registrator"
+    hostname: "registrator"
+    volumes:
+     - "/var/run/docker.sock:/tmp/docker.sock"
+    links:
+     - consul1
+    command: -ip=192.168.99.100 consul://consul:8500
+loadbalancer:
+  build: ./loadbalancer
   links:
     - consul1
-  command: "-internal consul://consul1:8500"
+  ports:
+    - "80:80"
+    - "8080:8080"
+  environment:
+    CONSUL_URL: 192.168.99.100:8500
+  volumes:
+    - ./loadbalancer/consul-template:/etc/consul-template
