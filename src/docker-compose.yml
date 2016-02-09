@@ -35,7 +35,7 @@ registrator:
      - "/var/run/docker.sock:/tmp/docker.sock"
     links:
      - consul1
-    command: -ip=192.168.99.100 consul://consul:8500
+    command: -internal consul://consul:8500
 loadbalancer_service1:
   build: ./loadbalancer
   links:
